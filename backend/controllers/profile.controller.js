@@ -7,10 +7,15 @@ import mongoose from "mongoose";
 import { Complaint } from "../models/complaint.model.js";
 import { MessCommittee } from "../models/messCommittee.model.js";
 import { Menu } from "../models/menu.model.js";
+import { Hostel } from "../models/hostel.model.js";
+import { mailHandler } from "../utils/mailHandler.js";
+import { accountDeletionTemplate } from "../templates/accountDeletion.template.js";
+import { BlockedProfile } from "../models/blockedProfile.model.js";
 
 // imported the complaint,menu,messcommittee because its showing error/unregistered schema ??error/doubt
 
 
+//update user profile
 const updateProfile = asyncHandler(async (req, res) => {
     //getRequired Data
     //get userId
@@ -65,10 +70,10 @@ const updateProfile = asyncHandler(async (req, res) => {
 
 });
 
+//get user details
 const getUserDetails = asyncHandler(async (req, res) => {
 
     console.log(req.user);
-    // const { id } = req.body;
 
     console.log("Registered Models: ", mongoose.modelNames());
 
@@ -78,10 +83,6 @@ const getUserDetails = asyncHandler(async (req, res) => {
             populate: {
                 path: "menu messCommittee",
                 select: "-hostel",
-                // populate: {
-                //   path: "messManager",
-                //   select: "-hostel"
-                // }
             },
         })
         .populate("otherDetails complaints")
@@ -94,6 +95,127 @@ const getUserDetails = asyncHandler(async (req, res) => {
         );
 });
 
+//block user
+const blockUserProfile = asyncHandler(async (req, res) => {
+
+    //1. fetch userDetails 
+    //check is already blocked -> otherwise multiple entry will be created
+    //2. block userBy its emailId
+    // console.log(req.body);
+
+    const { email } = req.body;
+
+    if (!email) {
+        throw new ApiError(404, "Email Required")
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) {
+        throw new ApiError(404, "User not found")
+    }
+    console.log("user details", user)
+    //check whether already blocked
+    const isBlocked = await BlockedProfile.findOne({ email });
+    console.log(159)
+    console.log(isBlocked)
+    console.log(161)
+    if (isBlocked) {
+        throw new ApiError(403, "User Is already Blocked")
+    }
+    console.log(165)
+
+    const blockedUserDetails = await BlockedProfile.create({ email });
+
+    return res
+        .status(200)
+        .json(
+            new ApiResponse(200, blockedUserDetails, "User blocked")
+        )
+});
+
+//unblock user
+const unblockUserProfile = asyncHandler(async (req, res) => {
+
+    const { email } = req.body;
+
+    if (!email) {
+        throw new ApiError(404, "Email Required")
+    }
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+        throw new ApiError(404, "User not found")
+    }
+
+    console.log("user: ", user)
+
+    const isBlocked = await BlockedProfile.findOne({ email });
+
+    if (!isBlocked) {
+        throw new ApiError(403, "User Is already unblocked")
+    }
+
+    console.log("isblocked :", isBlocked)
+
+    const unblockedUserDetails = await BlockedProfile.findOneAndDelete({ email });
+    return res
+        .status(200)
+        .json(
+            new ApiResponse(200, { unblockedUserDetails }, "User Unblocked Successfully")
+        );
+});
+
+//delete account
+const deleteUserAccount = asyncHandler(async (req, res) => {
+
+    //fetch userid
+    //delete entry from OtherDetails
+    //delete entry from Hostel
+    //delete entry from User
+    //send deletion mail
+
+    const userId = req.user?._id
+
+    const user = await User.findById(userId);
+    // console.log(user);
+    if (!user) {
+        throw new ApiError(404, "User not found")
+    }
+
+    await OtherDetails.findByIdAndDelete(user.otherDetails);
+
+    const hostelDetails = await Hostel.findByIdAndUpdate(
+        user.hostel,
+        { $pull: { students: userId } },  
+        { new: true }  
+    );
+    
+
+    console.log("hostel info: ", hostelDetails)
+
+    const deletedUser = await User.findByIdAndDelete(userId,
+        {
+            new: true
+        }
+    );
+
+    console.log(deletedUser)
+
+    await mailHandler(
+        deletedUser.email,
+        "Account deletion Confirmation",
+        accountDeletionTemplate(deletedUser.email)
+    )
+
+    return res
+        .status(200)
+        .json(
+            new ApiResponse(200, deletedUser, "User Account Deleted Successfully")
+        )
+});
+
+//get user details by reg no
 const getUserByRegistrationNumber = asyncHandler(async (req, res) => {
     const { registrationNumber } = req.body;
 
@@ -136,6 +258,75 @@ const getUserByRegistrationNumber = asyncHandler(async (req, res) => {
         );
 });
 
+//mark fee payment status true
+const markFeeStatusAsTrue = asyncHandler(async (req, res) => {
+
+    const { registrationNumber } = req.body;
+
+    if (!registrationNumber) {
+        throw new ApiError(404, "Registration Number Required")
+    }
+
+    const user = await User.findOne({ registrationNumber });
+
+    console.log("UserDetails : ", user);
+
+    if (!user) {
+        throw new ApiError(404, "User not found, Invalid Registration Number")
+    }
+
+    const details = await OtherDetails.findByIdAndUpdate(
+        user.otherDetails,
+        {
+            isMessFeePaid: true,
+        },
+        {
+            new: true
+        }
+    );
+
+    return res
+        .status(200)
+        .json(
+            new ApiResponse(200, details, "Fee marked as Paid")
+        );
+
+});
+
+//mark fee payment status false
+const markFeeStatusAsFalse = asyncHandler(async (req, res) => {
+
+    const { registrationNumber } = req.body;
+
+    if (!registrationNumber) {
+        throw new ApiError(404, "Registration Number Required")
+    }
+
+    const user = await User.findOne({ registrationNumber });
+
+    console.log("UserDetails : ", user);
+
+    if (!user) {
+        throw new ApiError(404, "User not found, Invalid Registration Number")
+    }
+
+    const details = await OtherDetails.findByIdAndUpdate(
+        user.otherDetails,
+        {
+            isMessFeePaid: false,
+        },
+        {
+            new: true
+        }
+    );
+
+    return res
+        .status(200)
+        .json(
+            new ApiResponse(200, details, "Fee marked as unpaid")
+        );
+
+});
 
 
-export { updateProfile, getUserDetails, getUserByRegistrationNumber } 
+export { updateProfile, getUserDetails, getUserByRegistrationNumber, deleteUserAccount, blockUserProfile, unblockUserProfile, markFeeStatusAsTrue, markFeeStatusAsFalse }

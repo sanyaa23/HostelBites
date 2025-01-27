@@ -6,10 +6,12 @@ dotenv.config({
 });
 // import { User } from "../models/user.model.js";
 import { asyncHandler } from "../utils/AsyncHandler.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { ApiError } from "../utils/ApiError.js";
 
 //auth
 
-export const verifyJwt = asyncHandler(async (req, res, next) => {
+const verifyJwt = asyncHandler(async (req, res, next) => {
   try {
     console.log("before token extraction");
     console.log("request", req.header);
@@ -34,9 +36,67 @@ export const verifyJwt = asyncHandler(async (req, res, next) => {
     }
 
     console.log("success")
-    req.user = decodedToken; 
+    req.user = decodedToken; //so that we can use it in isStudent and isAdmin middleware to verify
     next();
   } catch (error) {
     throw new ApiError(401, error?.message || "Invalid access token")
   }
 });
+
+const isStudent = asyncHandler(async (req, res, next) => {
+
+  if (req.user.accountCategory !== "Student") {
+    throw new ApiError(401, "This is a protected route authorized for Student only")
+  }
+
+  next();
+});
+
+const isChiefWarden = asyncHandler(async (req, res, next) => {
+
+  if (req.user.accountCategory !== "Chief-Warden") {
+    throw new ApiError(401, "This is a protected route authorized for Chief Warden only")
+  }
+
+  next();
+});
+
+const isCommitteeMember = asyncHandler(async (req, res, next) => {
+
+  if (req.user.accountCategory !== "Committee-Member") {
+    throw new ApiError(401, "This is a protected route authorized for Committee Member only")
+  }
+
+  next();
+});
+
+const isAccountant = asyncHandler(async (req, res, next) => {
+
+  if (req.user.accountCategory !== "Accountant") {
+    throw new ApiError(401, "This is a protected route authorized for Accountant only")
+  }
+
+  next();
+});
+
+const isNotStudent = asyncHandler(async (req, res, next) => {
+
+  if (req.user.accountCategory === "Student") {
+    throw new ApiError(401, "Student can't edit these details")
+  }
+
+  next();
+});
+
+const isWardenOrIsAccountant = asyncHandler(async (req, res, next) => {
+
+  const userCategory = req.user.accountCategory
+
+  if (userCategory !== "Chief-Warden" && userCategory !== "Accountant") {
+    throw new ApiError(401, "This is a protected route authorized for Accountant and Chief Warden only")
+  }
+
+  next();
+});
+
+export { verifyJwt, isChiefWarden, isCommitteeMember, isAccountant, isNotStudent, isStudent, isWardenOrIsAccountant }

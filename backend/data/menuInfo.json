@@ -1,0 +1,452 @@
+[
+    {
+        "hostel": "6794f504a5009937afa05821",
+        "monday": {
+            "breakFast": "POHA, SAMBHAR, & MILK BOURNVITA",
+            "lunch": "CHICKEN CURRY, RICE, ROTI, & SALAD",
+            "snacks": "BHEL PURI, TEA, & GREEN CHATNEY",
+            "dinner": "DAL TADKA, ALOO JEERA, ROTI, & RICE"
+        },
+        "tuesday": {
+            "breakFast": "UPMA, COCONUT CHUTNEY, & FILTER COFFEE",
+            "lunch": "VEG PULAO, CURD, & PANEER BUTTER MASALA",
+            "snacks": "FRITTERS, TEA, & MINT CHATNEY",
+            "dinner": "MIX VEG, KADHI PAKORA, ROTI, & GULAB JAMUN"
+        },
+        "wednesday": {
+            "breakFast": "MASALA DOSA, SAMBHAR, & CHUTNEY",
+            "lunch": "RAJMA CHAWAL, ROTI, & KHEER",
+            "snacks": "ONION PAKORA, CHAI, & SWEET SAUCE",
+            "dinner": "CHICKEN BIRYANI, RAITA, & SALAD"
+        },
+        "thursday": {
+            "breakFast": "PARATHA, ALOO SABJI, & CURD",
+            "lunch": "PANEER DO PYAZA, RICE, & ROTI",
+            "snacks": "SAMOSA, CHAI, & TAMARIND CHATNEY",
+            "dinner": "KOFTA CURRY, RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "TOAST, BUTTER, JAM, & MILK",
+            "lunch": "CHHOLE BHATURE, RICE, & SALAD",
+            "snacks": "SPRING ROLLS, CHAI, & CHILLI SAUCE",
+            "dinner": "MIX VEG PULAO, RAITA, & ROTI"
+        },
+        "saturday": {
+            "breakFast": "IDLI, SAMBHAR, & FILTER COFFEE",
+            "lunch": "FISH CURRY, RICE, ROTI, & SALAD",
+            "snacks": "ALOO TIKKI, CHAI, & MINT CHATNEY",
+            "dinner": "DAL MAKHANI, SHAHI PANEER, ROTI, & RICE"
+        },
+        "sunday": {
+            "breakFast": "CHANA MASALA, PURI, & SWEET LASSI",
+            "lunch": "MUTTON CURRY, RICE, ROTI, & SALAD",
+            "snacks": "BREAD PAKORA, TEA, & TOMATO SAUCE",
+            "dinner": "VEG BIRYANI, RAITA, & GULAB JAMUN"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05823",
+        "monday": {
+            "breakFast": "VEG SANDWICH, TEA, & FRUIT JUICE",
+            "lunch": "EGG CURRY, RICE, & ROTI",
+            "snacks": "FRENCH FRIES, TEA, & MINT SAUCE",
+            "dinner": "VEG KURMA, RICE, & ROTI"
+        },
+        "tuesday": {
+            "breakFast": "UPMA, SAMBHAR, & FILTER COFFEE",
+            "lunch": "CHHOLE BHATURE, RAITA, & SALAD",
+            "snacks": "ONION RINGS, TEA, & KETCHUP",
+            "dinner": "PALAK PANEER, ROTI, & RICE"
+        },
+        "wednesday": {
+            "breakFast": "MASALA DOSA, CHUTNEY, & COFFEE",
+            "lunch": "VEG BIRYANI, CURD, & ROTI",
+            "snacks": "ALOO TIKKI, CHAI, & TAMARIND CHATNEY",
+            "dinner": "FISH CURRY, RICE, & ROTI"
+        },
+        "thursday": {
+            "breakFast": "CORN FLAKES, MILK, & BANANA",
+            "lunch": "PANEER TIKKA, RICE, & ROTI",
+            "snacks": "BHEL PURI, TEA, & MINT SAUCE",
+            "dinner": "DAL TADKA, JEERA RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "IDLI, SAMBHAR, & TEA",
+            "lunch": "CHICKEN FRY, RICE, ROTI, & SALAD",
+            "snacks": "POTATO FRIES, CHAI, & CHILLI SAUCE",
+            "dinner": "MUTTON CURRY, RICE, & ROTI"
+        },
+        "saturday": {
+            "breakFast": "TOAST, JAM, & MILK",
+            "lunch": "FISH PULAO, CURD, & ROTI",
+            "snacks": "SAMOSA, TEA, & SWEET SAUCE",
+            "dinner": "VEG KORMA, ROTI, & RICE"
+        },
+        "sunday": {
+            "breakFast": "PARATHA, ALOO CURRY, & CURD",
+            "lunch": "BUTTER CHICKEN, RICE, & ROTI",
+            "snacks": "FRUIT SALAD, CHAI, & JUICE",
+            "dinner": "VEG PULAO, RAITA, & ROTI"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05824",
+        "monday": {
+            "breakFast": "ALOO PARATHA, BUTTER, & CURD",
+            "lunch": "CHANA MASALA, JEERA RICE, & ROTI",
+            "snacks": "PAKORA, CHAI, & TAMARIND CHATNEY",
+            "dinner": "SHAHI PANEER, RICE, & ROTI"
+        },
+        "tuesday": {
+            "breakFast": "PAV BHAJI & ORANGE JUICE",
+            "lunch": "MIX VEG CURRY, RICE, & RAITA",
+            "snacks": "SANDWICH, TEA, & TOMATO SAUCE",
+            "dinner": "KADHI PAKORA, RICE, & ROTI"
+        },
+        "wednesday": {
+            "breakFast": "BREAD OMELETTE & BANANA SHAKE",
+            "lunch": "RAJMA, RICE, & ROTI",
+            "snacks": "VEG ROLLS & CHAI",
+            "dinner": "DAL MAKHANI, JEERA RICE, & GULAB JAMUN"
+        },
+        "thursday": {
+            "breakFast": "POORI & ALOO SABZI",
+            "lunch": "SOYA CHUNKS CURRY, RICE, & ROTI",
+            "snacks": "KACHORI & CHAI",
+            "dinner": "CHICKEN CURRY, RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "VEG UPMA & FILTER COFFEE",
+            "lunch": "PANEER LABABDAR, ROTI, & RICE",
+            "snacks": "BHEL PURI & TEA",
+            "dinner": "MASOOR DAL, RICE, & ROTI"
+        },
+        "saturday": {
+            "breakFast": "IDLI, SAMBHAR, & CHUTNEY",
+            "lunch": "MIX VEG, DAL TADKA, & RICE",
+            "snacks": "MOMOS, CHAI, & GREEN CHATNEY",
+            "dinner": "CHANA DAL, RICE, & ROTI"
+        },
+        "sunday": {
+            "breakFast": "VEG CUTLET & FRUIT JUICE",
+            "lunch": "MALAI KOFTA, NAAN, & RICE",
+            "snacks": "VEG PAKORA & MINT CHATNEY",
+            "dinner": "PANEER TIKKA MASALA, RICE, & ROTI"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa0582a",
+        "monday": {
+            "breakFast": "VEG SANDWICH & CHAI",
+            "lunch": "PANEER BUTTER MASALA, ROTI, & RICE",
+            "snacks": "PUFFS & TEA",
+            "dinner": "PALAK PANEER, JEERA RICE, & ROTI"
+        },
+        "tuesday": {
+            "breakFast": "CHILLA, CURD, & MANGO JUICE",
+            "lunch": "RAJMA, RICE, & ROTI",
+            "snacks": "VEG PATTIES & CHAI",
+            "dinner": "SOYA CHAAP, RICE, & ROTI"
+        },
+        "wednesday": {
+            "breakFast": "UPMA, CHUTNEY, & MILK",
+            "lunch": "DAL FRY, RICE, & ROTI",
+            "snacks": "MAGGI & CHAI",
+            "dinner": "MIX VEG, ROTI, & KHEER"
+        },
+        "thursday": {
+            "breakFast": "MASALA DOSA & COCONUT CHUTNEY",
+            "lunch": "CHICKEN BIRYANI, RAITA, & SALAD",
+            "snacks": "DABELI & CHAI",
+            "dinner": "ALOO GOBI, ROTI, & RICE"
+        },
+        "friday": {
+            "breakFast": "IDLI & SAMBHAR",
+            "lunch": "PANEER DO PYAZA, ROTI, & RICE",
+            "snacks": "VEG PUFF & CHAI",
+            "dinner": "DAL TADKA, RICE, & ROTI"
+        },
+        "saturday": {
+            "breakFast": "OATS & MILK",
+            "lunch": "VEG BIRYANI & CURD",
+            "snacks": "SAMOSA & CHAI",
+            "dinner": "BHINDI MASALA, RICE, & ROTI"
+        },
+        "sunday": {
+            "breakFast": "FRUIT SALAD & JUICE",
+            "lunch": "KADHI RICE & ROTI",
+            "snacks": "BHEL PURI & CHAI",
+            "dinner": "PANEER TIKKA, ROTI, & RICE"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05826",
+        "monday": {
+            "breakFast": "OATS & HONEY",
+            "lunch": "VEG PULAO, CURD, & SALAD",
+            "snacks": "DABELI & TEA",
+            "dinner": "DAL MAKHANI, ROTI, & RICE"
+        },
+        "tuesday": {
+            "breakFast": "VEG PARATHA & CHUTNEY",
+            "lunch": "CHICKEN CURRY, RICE, & ROTI",
+            "snacks": "SAMOSA & CHAI",
+            "dinner": "ALOO GOBI, ROTI, & RICE"
+        },
+        "wednesday": {
+            "breakFast": "MASALA TOAST & TEA",
+            "lunch": "PANEER BHURJI, ROTI, & RICE",
+            "snacks": "VEG BURGER & TEA",
+            "dinner": "KADHI PAKORA, RICE, & ROTI"
+        },
+        "thursday": {
+            "breakFast": "DOSA & SAMBHAR",
+            "lunch": "RAJMA, RICE, & ROTI",
+            "snacks": "MOMOS & CHUTNEY",
+            "dinner": "MALAI KOFTA, RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "BREAD BUTTER & TEA",
+            "lunch": "MIX VEG, ROTI, & RICE",
+            "snacks": "PAKORA & CHAI",
+            "dinner": "PANEER TIKKA, ROTI, & RICE"
+        },
+        "saturday": {
+            "breakFast": "VEG CUTLET & MILK",
+            "lunch": "SOYA CHAAP, RICE, & ROTI",
+            "snacks": "KACHORI & CHAI",
+            "dinner": "DAL TADKA, ROTI, & RICE"
+        },
+        "sunday": {
+            "breakFast": "POHA & CHUTNEY",
+            "lunch": "CHICKEN BIRYANI, RAITA, & SALAD",
+            "snacks": "VEG ROLLS & CHAI",
+            "dinner": "ALOO METHI, ROTI, & RICE"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05827",
+        "monday": {
+            "breakFast": "BREAD OMELETTE & CHAI",
+            "lunch": "DAL TADKA, JEERA RICE, & ROTI",
+            "snacks": "VEG PUFF & TOMATO SAUCE",
+            "dinner": "SHAHI PANEER, NAAN, & RICE"
+        },
+        "tuesday": {
+            "breakFast": "CHILLA & CURD",
+            "lunch": "VEG BIRYANI, RAITA, & ROTI",
+            "snacks": "PAKORA & GREEN CHUTNEY",
+            "dinner": "ALOO METHI, ROTI, & DAL FRY"
+        },
+        "wednesday": {
+            "breakFast": "VEG UPMA & FILTER COFFEE",
+            "lunch": "RAJMA RICE & ROTI",
+            "snacks": "MAGGI & TEA",
+            "dinner": "PANEER BUTTER MASALA, ROTI, & RICE"
+        },
+        "thursday": {
+            "breakFast": "MASALA DOSA & COCONUT CHUTNEY",
+            "lunch": "MIX VEG, ROTI, & RICE",
+            "snacks": "MOMOS & GREEN CHUTNEY",
+            "dinner": "CHICKEN CURRY, JEERA RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "BREAD TOAST, BUTTER, & MILK",
+            "lunch": "CHANA MASALA, ROTI, & RICE",
+            "snacks": "VEG BURGER & CHAI",
+            "dinner": "DAL MAKHANI, RICE, & ROTI"
+        },
+        "saturday": {
+            "breakFast": "ALOO PARATHA & CURD",
+            "lunch": "VEG PULAO, RAITA, & SALAD",
+            "snacks": "KACHORI & CHAI",
+            "dinner": "PALAK PANEER, ROTI, & GULAB JAMUN"
+        },
+        "sunday": {
+            "breakFast": "POORI & ALOO SABZI",
+            "lunch": "SOYA CHAAP, ROTI, & RICE",
+            "snacks": "VEG SANDWICH & TEA",
+            "dinner": "MALAI KOFTA, RICE, & ROTI"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05828",
+        "monday": {
+            "breakFast": "IDLI, SAMBHAR, & FILTER COFFEE",
+            "lunch": "MIX VEG CURRY, ROTI, & RICE",
+            "snacks": "PAKORA, CHAI, & GREEN CHUTNEY",
+            "dinner": "DAL MAKHANI, ROTI, & RICE"
+        },
+        "tuesday": {
+            "breakFast": "OATS & BANANA",
+            "lunch": "PANEER LABABDAR, JEERA RICE, & ROTI",
+            "snacks": "PUFFS & TEA",
+            "dinner": "ALOO GOBI, ROTI, & RICE"
+        },
+        "wednesday": {
+            "breakFast": "MASALA TOAST & MILK",
+            "lunch": "CHICKEN CURRY, RICE, & ROTI",
+            "snacks": "DABELI & CHAI",
+            "dinner": "PALAK PANEER, ROTI, & JEERA RICE"
+        },
+        "thursday": {
+            "breakFast": "CHILLA & CURD",
+            "lunch": "SOYA CHAAP, ROTI, & RICE",
+            "snacks": "VEG BURGER & CHAI",
+            "dinner": "KADHI PAKORA, JEERA RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "BREAD TOAST, JAM, & MILK",
+            "lunch": "RAJMA RICE & ROTI",
+            "snacks": "MOMOS & TOMATO CHUTNEY",
+            "dinner": "MIX VEG, ROTI, & DAL FRY"
+        },
+        "saturday": {
+            "breakFast": "VEG CUTLET & TEA",
+            "lunch": "DAL TADKA, JEERA RICE, & ROTI",
+            "snacks": "SAMOSA & CHUTNEY",
+            "dinner": "SHAHI PANEER, NAAN, & RICE"
+        },
+        "sunday": {
+            "breakFast": "POHA & FILTER COFFEE",
+            "lunch": "CHANA MASALA, ROTI, & RICE",
+            "snacks": "VEG PUFF & CHAI",
+            "dinner": "ALOO METHI, ROTI, & GULAB JAMUN"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05829",
+        "monday": {
+            "breakFast": "MASALA DOSA & FILTER COFFEE",
+            "lunch": "VEG BIRYANI, RAITA, & ROTI",
+            "snacks": "KACHORI & CHAI",
+            "dinner": "PANEER BUTTER MASALA, RICE, & ROTI"
+        },
+        "tuesday": {
+            "breakFast": "BREAD OMELETTE & TEA",
+            "lunch": "CHANA MASALA, ROTI, & RICE",
+            "snacks": "MAGGI & TEA",
+            "dinner": "PALAK PANEER, ROTI, & KHEER"
+        },
+        "wednesday": {
+            "breakFast": "UPMA & CHUTNEY",
+            "lunch": "RAJMA RICE & ROTI",
+            "snacks": "VEG ROLLS & CHAI",
+            "dinner": "DAL MAKHANI, ROTI, & JEERA RICE"
+        },
+        "thursday": {
+            "breakFast": "VEG CUTLET & ORANGE JUICE",
+            "lunch": "MIX VEG, RICE, & ROTI",
+            "snacks": "MOMOS & GREEN CHATNEY",
+            "dinner": "KADHI PAKORA, RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "OATS & FRUIT SALAD",
+            "lunch": "PANEER DO PYAZA, JEERA RICE, & ROTI",
+            "snacks": "SAMOSA & MINT CHUTNEY",
+            "dinner": "ALOO GOBI, ROTI, & RICE"
+        },
+        "saturday": {
+            "breakFast": "BREAD BUTTER & JAM",
+            "lunch": "VEG PULAO, CURD, & SALAD",
+            "snacks": "KACHORI & CHAI",
+            "dinner": "SOYA CHAAP, ROTI, & RICE"
+        },
+        "sunday": {
+            "breakFast": "MASALA OMELETTE & TEA",
+            "lunch": "CHICKEN BIRYANI, RAITA, & SALAD",
+            "snacks": "VEG SANDWICH & TEA",
+            "dinner": "MALAI KOFTA, ROTI, & JEERA RICE"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05822",
+        "monday": {
+            "breakFast": "BREAD BUTTER & MILK",
+            "lunch": "DAL MAKHANI, ROTI, & JEERA RICE",
+            "snacks": "VEG ROLLS & CHAI",
+            "dinner": "SHAHI PANEER, ROTI, & RICE"
+        },
+        "tuesday": {
+            "breakFast": "OATS & HONEY",
+            "lunch": "CHICKEN CURRY, RICE, & ROTI",
+            "snacks": "KACHORI & CHUTNEY",
+            "dinner": "ALOO METHI, ROTI, & DAL FRY"
+        },
+        "wednesday": {
+            "breakFast": "POORI & ALOO SABZI",
+            "lunch": "RAJMA RICE & ROTI",
+            "snacks": "MAGGI & TEA",
+            "dinner": "PANEER BUTTER MASALA, ROTI, & JEERA RICE"
+        },
+        "thursday": {
+            "breakFast": "IDLI, SAMBHAR, & FILTER COFFEE",
+            "lunch": "PANEER TIKKA MASALA, ROTI, & RICE",
+            "snacks": "DABELI & TEA",
+            "dinner": "PALAK PANEER, RICE, & ROTI"
+        },
+        "friday": {
+            "breakFast": "MASALA DOSA & CHUTNEY",
+            "lunch": "CHANA MASALA, ROTI, & RICE",
+            "snacks": "SAMOSA & CHUTNEY",
+            "dinner": "KADHI PAKORA, RICE, & ROTI"
+        },
+        "saturday": {
+            "breakFast": "BREAD TOAST & BUTTER",
+            "lunch": "VEG PULAO, RAITA, & SALAD",
+            "snacks": "PAKORA & CHAI",
+            "dinner": "SOYA CHAAP, ROTI, & RICE"
+        },
+        "sunday": {
+            "breakFast": "UPMA & TEA",
+            "lunch": "CHICKEN BIRYANI, RAITA, & SALAD",
+            "snacks": "VEG BURGER & CHAI",
+            "dinner": "DAL FRY, RICE, & ROTI"
+        }
+    },
+    {
+        "hostel": "6794f504a5009937afa05825",
+        "monday": {
+            "breakFast": "VEG SANDWICH & TEA",
+            "lunch": "MIX VEG CURRY, ROTI, & RICE",
+            "snacks": "PAKORA & GREEN CHATNEY",
+            "dinner": "PALAK PANEER, ROTI, & RICE"
+        },
+        "tuesday": {
+            "breakFast": "OATS & BANANA",
+            "lunch": "CHICKEN CURRY, RICE, & ROTI",
+            "snacks": "MOMOS & CHUTNEY",
+            "dinner": "DAL MAKHANI, ROTI, & JEERA RICE"
+        },
+        "wednesday": {
+            "breakFast": "CHILLA & CURD",
+            "lunch": "RAJMA RICE & ROTI",
+            "snacks": "MAGGI & TEA",
+            "dinner": "PANEER TIKKA MASALA, ROTI, & RICE"
+        },
+        "thursday": {
+            "breakFast": "BREAD TOAST & BUTTER",
+            "lunch": "VEG PULAO, RAITA, & SALAD",
+            "snacks": "KACHORI & CHAI",
+            "dinner": "ALOO GOBI, ROTI, & RICE"
+        },
+        "friday": {
+            "breakFast": "MASALA DOSA & COCONUT CHUTNEY",
+            "lunch": "SOYA CHAAP, ROTI, & RICE",
+            "snacks": "VEG BURGER & TEA",
+            "dinner": "SHAHI PANEER, RICE, & ROTI"
+        },
+        "saturday": {
+            "breakFast": "UPMA & FILTER COFFEE",
+            "lunch": "CHANA MASALA, ROTI, & RICE",
+            "snacks": "DABELI & CHAI",
+            "dinner": "PALAK PANEER, ROTI, & KHEER"
+        },
+        "sunday": {
+            "breakFast": "BREAD OMELETTE & CHAI",
+            "lunch": "CHICKEN BIRYANI, RAITA, & SALAD",
+            "snacks": "VEG PUFF & TEA",
+            "dinner": "MALAI KOFTA, ROTI, & JEERA RICE"
+        }
+    }
+]
