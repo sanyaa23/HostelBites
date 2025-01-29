@@ -5,7 +5,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import mongoose from "mongoose";
 import { Complaint } from "../models/complaint.model.js";
-import { MessCommittee } from "../models/messCommittee.model.js";
+import { Committee } from "../models/messCommittee.model.js";
 import { Menu } from "../models/menu.model.js";
 import { Hostel } from "../models/hostel.model.js";
 import { mailHandler } from "../utils/mailHandler.js";
@@ -15,7 +15,6 @@ import { BlockedProfile } from "../models/blockedProfile.model.js";
 // imported the complaint,menu,messcommittee because its showing error/unregistered schema ??error/doubt
 
 
-//update user profile
 const updateProfile = asyncHandler(async (req, res) => {
     //getRequired Data
     //get userId
@@ -70,19 +69,24 @@ const updateProfile = asyncHandler(async (req, res) => {
 
 });
 
-//get user details
+
 const getUserDetails = asyncHandler(async (req, res) => {
 
     console.log(req.user);
+    // const { id } = req.body;
 
-    console.log("Registered Models: ", mongoose.modelNames());
+    // console.log("Registered Models: ", mongoose.modelNames());
 
     const userDetails = await User.findById(req.user?._id)
         .populate({
             path: "hostel",
             populate: {
-                path: "menu messCommittee",
+                path: "menu committee",
                 select: "-hostel",
+                // populate: {
+                //   path: "messManager",
+                //   select: "-hostel"
+                // }
             },
         })
         .populate("otherDetails complaints")
@@ -95,7 +99,6 @@ const getUserDetails = asyncHandler(async (req, res) => {
         );
 });
 
-//block user
 const blockUserProfile = asyncHandler(async (req, res) => {
 
     //1. fetch userDetails 
@@ -133,7 +136,6 @@ const blockUserProfile = asyncHandler(async (req, res) => {
         )
 });
 
-//unblock user
 const unblockUserProfile = asyncHandler(async (req, res) => {
 
     const { email } = req.body;
@@ -187,10 +189,10 @@ const deleteUserAccount = asyncHandler(async (req, res) => {
 
     const hostelDetails = await Hostel.findByIdAndUpdate(
         user.hostel,
-        { $pull: { students: userId } },  
-        { new: true }  
+        { $pull: { students: userId } },
+        { new: true }
     );
-    
+
 
     console.log("hostel info: ", hostelDetails)
 
@@ -215,7 +217,6 @@ const deleteUserAccount = asyncHandler(async (req, res) => {
         )
 });
 
-//get user details by reg no
 const getUserByRegistrationNumber = asyncHandler(async (req, res) => {
     const { registrationNumber } = req.body;
 
@@ -258,7 +259,6 @@ const getUserByRegistrationNumber = asyncHandler(async (req, res) => {
         );
 });
 
-//mark fee payment status true
 const markFeeStatusAsTrue = asyncHandler(async (req, res) => {
 
     const { registrationNumber } = req.body;
@@ -292,8 +292,6 @@ const markFeeStatusAsTrue = asyncHandler(async (req, res) => {
         );
 
 });
-
-//mark fee payment status false
 const markFeeStatusAsFalse = asyncHandler(async (req, res) => {
 
     const { registrationNumber } = req.body;
