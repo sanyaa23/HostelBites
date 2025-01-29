@@ -43,60 +43,70 @@ const verifyJwt = asyncHandler(async (req, res, next) => {
   }
 });
 
-const isStudent = asyncHandler(async (req, res, next) => {
+// const isStudent = asyncHandler(async (req, res, next) => {
 
-  if (req.user.accountCategory !== "Student") {
-    throw new ApiError(401, "This is a protected route authorized for Student only")
+//   if (req.user.accountCategory !== "Student") {
+//     throw new ApiError(401, "This is a protected route authorized for Student only")
+//   }
+
+//   next();
+// });
+
+// const isChiefWarden = asyncHandler(async (req, res, next) => {
+
+//   if (req.user.accountCategory !== "Chief-Warden") {
+//     throw new ApiError(401, "This is a protected route authorized for Chief Warden only")
+//   }
+
+//   next();
+// });
+
+// const isCommitteeMember = asyncHandler(async (req, res, next) => {
+
+//   if (req.user.accountCategory !== "Mess-Committee-Member") {
+//     throw new ApiError(401, "This is a protected route authorized for Committee Member only")
+//   }
+
+//   next();
+// });
+
+// const isAccountant = asyncHandler(async (req, res, next) => {
+
+//   if (req.user.accountCategory !== "Accountant") {
+//     throw new ApiError(401, "This is a protected route authorized for Accountant only")
+//   }
+
+//   next();
+// });
+
+// const isNotStudent = asyncHandler(async (req, res, next) => {
+
+//   if (req.user.accountCategory === "Student") {
+//     throw new ApiError(401, "Student can't edit these details")
+//   }
+
+//   next();
+// });
+
+// const isWardenOrIsAccountant = asyncHandler(async (req, res, next) => {
+
+//   const userCategory = req.user.accountCategory
+
+//   if (userCategory !== "Chief-Warden" && userCategory !== "Accountant") {
+//     throw new ApiError(401, "This is a protected route authorized for Accountant and Chief Warden only")
+//   }
+
+//   next();
+// });
+
+const isAuthorized = (allowedRoles) => asyncHandler(async (req, res, next) => {
+  if (!allowedRoles.includes(req.user.accountCategory)) {
+    throw new ApiError(401, "Unauthorized access");
   }
-
   next();
 });
 
-const isChiefWarden = asyncHandler(async (req, res, next) => {
 
-  if (req.user.accountCategory !== "Chief-Warden") {
-    throw new ApiError(401, "This is a protected route authorized for Chief Warden only")
-  }
+// export { verifyJwt, isChiefWarden, isCommitteeMember, isAccountant, isNotStudent, isStudent, isWardenOrIsAccountant, isAuthorized }
 
-  next();
-});
-
-const isCommitteeMember = asyncHandler(async (req, res, next) => {
-
-  if (req.user.accountCategory !== "Committee-Member") {
-    throw new ApiError(401, "This is a protected route authorized for Committee Member only")
-  }
-
-  next();
-});
-
-const isAccountant = asyncHandler(async (req, res, next) => {
-
-  if (req.user.accountCategory !== "Accountant") {
-    throw new ApiError(401, "This is a protected route authorized for Accountant only")
-  }
-
-  next();
-});
-
-const isNotStudent = asyncHandler(async (req, res, next) => {
-
-  if (req.user.accountCategory === "Student") {
-    throw new ApiError(401, "Student can't edit these details")
-  }
-
-  next();
-});
-
-const isWardenOrIsAccountant = asyncHandler(async (req, res, next) => {
-
-  const userCategory = req.user.accountCategory
-
-  if (userCategory !== "Chief-Warden" && userCategory !== "Accountant") {
-    throw new ApiError(401, "This is a protected route authorized for Accountant and Chief Warden only")
-  }
-
-  next();
-});
-
-export { verifyJwt, isChiefWarden, isCommitteeMember, isAccountant, isNotStudent, isStudent, isWardenOrIsAccountant }
+export { verifyJwt, isAuthorized }

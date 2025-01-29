@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const messCommitteeSchema = new Schema({
+const CommitteeSchema = new Schema({
     hostel: {
         type: Schema.Types.ObjectId,
         required: true
@@ -16,4 +16,4 @@ const messCommitteeSchema = new Schema({
         timestamps: true
     });
 
-export const MessCommittee = mongoose.model("MessCommittee", messCommitteeSchema);
+export const Committee = mongoose.model("Committee", CommitteeSchema);

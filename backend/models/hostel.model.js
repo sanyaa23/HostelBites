@@ -11,9 +11,9 @@ const hostelSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Menu",
     },
-    messCommittee: {
+    committee: {
         type: Schema.Types.ObjectId,
-        ref: "MessCommittee",
+        ref: "Committee",
     },
     wardenName: {
         type: String,

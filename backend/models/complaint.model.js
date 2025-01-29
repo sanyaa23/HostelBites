@@ -17,7 +17,7 @@ const complaintSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    avatar: {
+    image: {
         type: String,
     },
     upVotedBy: [

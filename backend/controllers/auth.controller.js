@@ -176,31 +176,31 @@ const signUp = asyncHandler(async (req, res) => {
     });
 
     const hosteldetail = await Hostel.findByIdAndUpdate(user.hostel, {
-        $push: { students: user._id },
+        $addToSet: { students: user._id },
     }, { new: true }); // The `new: true` option will return the updated document
-    
 
 
-const createdUser = await User.findById(user._id).select(
-    "-password -token -resetPasswordExpires"
-)
-// hostel.students.push(user._id);
-// await hostel.save();
 
-//9. send registration success mail
-await mailHandler(
-    createdUser.email,
-    "Successful Registration at HostelBites",
-    registrationTemplate(createdUser.firstName, createdUser.lastName)
-)
+    const createdUser = await User.findById(user._id).select(
+        "-password -token -resetPasswordExpires"
+    )
+    // hostel.students.push(user._id);
+    // await hostel.save();
 
-// 10. return response
-return res
-    .status(200)
-    .json(
-        // new ApiResponse(200, createdUser, "User is Registered Successfully")
-        new ApiResponse(200, hosteldetail, "User is Registered Successfully")
-    );
+    //9. send registration success mail
+    await mailHandler(
+        createdUser.email,
+        "Successful Registration at HostelBites",
+        registrationTemplate(createdUser.firstName, createdUser.lastName)
+    )
+
+    // 10. return response
+    return res
+        .status(200)
+        .json(
+            // new ApiResponse(200, createdUser, "User is Registered Successfully")
+            new ApiResponse(200, hosteldetail, "User is Registered Successfully")
+        );
 
 });
 
