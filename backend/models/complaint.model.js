@@ -40,6 +40,12 @@ const complaintSchema = new Schema({
         ref: 'User',
         default: null
     },
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Comment'
+        }
+    ]
 },
     {
         timestamps: true
