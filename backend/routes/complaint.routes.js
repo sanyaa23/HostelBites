@@ -4,17 +4,8 @@ const router = Router();
 //import middleware ->
 import { verifyJwt, isAuthorized } from "../middleware/auth.middleware.js";
 
-
 //import controllers
 import { createComplaint, getAllComplaints, getComplaintById, getUnresolvedComplaints, getResolvedComplaints, myComplaints, deleteComplaints, upvoteComplaint, downvoteComplaint, resolveComplaint, getComplaintByMostUpvotes, getMostRecentComplaints, createCommentOnComplaints, getCommentOnComplaints } from "../controllers/complaint.controller.js";
-
-// const {
-//   commentsOnComplaints,
-// } = require("../controllers/complaintController");
-// const {
-//   createComment,
-//   getComment,
-// } = require("../controllers/commentController");
 
 router.post("/create-complaint", verifyJwt, isAuthorized(["Student"]), createComplaint);
 router.get("/get-all-complaints", verifyJwt, getAllComplaints);
@@ -28,10 +19,7 @@ router.put("/downvote-complaint/:complaintId", verifyJwt, isAuthorized(["Student
 router.put("/resolve-complaint/:complaintId", verifyJwt, isAuthorized(["Mess-Committee-Member", "Chief-Warden", "Accountant"]), resolveComplaint);
 router.get("/get-by-most-votes", verifyJwt, getComplaintByMostUpvotes);
 router.get("/get-most-recent-complaints", verifyJwt, getMostRecentComplaints);
-
 router.post("/:complaintId/create-comment-on-complaints", verifyJwt, createCommentOnComplaints);
 router.get("/:complaintId/get-comment-on-complaints", verifyJwt, getCommentOnComplaints);
-
-
 
 export default router;
